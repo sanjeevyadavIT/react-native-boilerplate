@@ -1,0 +1,1 @@
+export const NAVIGATION_HOME_PAGE = 'HomePage';

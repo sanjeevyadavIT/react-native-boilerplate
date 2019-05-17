@@ -1,10 +1,17 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Provider } from 'react-redux';
+import Navigator from './navigation/Navigator';
+import NavigationService from './navigation/NavigationService';
+import store from './store';
 
 const App = () => (
-  <View>
-      <Text>React native starter code using Atomic Architecture</Text>
-  </View>
+  <Provider store={store}>
+    <Navigator
+      ref={(navigatorRef) => {
+        NavigationService.setTopLevelNavigator(navigatorRef);
+      }}
+    />
+  </Provider>
 );
 
 export default App;
