@@ -26,8 +26,8 @@ const Card = ({
     }
 
     return (
-    <ViewGroup onPress={onPress} style={[cardStyle, style]}>
-        <View>
+    <ViewGroup onPress={onPress}>
+        <View style={[cardStyle, style]}>
             {children}
         </View>
     </ViewGroup>
