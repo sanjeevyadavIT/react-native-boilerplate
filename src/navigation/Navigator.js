@@ -1,7 +1,7 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { HomePage } from '../components';
 import { NAVIGATION_HOME_PAGE } from './routes';
-import { PRIMARY_COLOR, ACCENT_COLOR } from '../config';
+import { PRIMARY_COLOR, ACCENT_COLOR } from '../constants';
 
 export const defaultHeader = {
     headerStyle: {
