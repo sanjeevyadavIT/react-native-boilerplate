@@ -1,0 +1,26 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  justify-content: 'space-around';
+}
+
+pre {
+  display: block;
+  font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+  color: #ffffff;
+  background-color: #414141;
+  padding: 1em;
+  white-space: pre-wrap;
+  overflow: auto;
+  line-height: 150%;
+}
+.backdrop {
+  background-color: #333;
+  color: #fff;
+}
+
+.center {
+  align-self: center;
+}
