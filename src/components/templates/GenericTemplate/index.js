@@ -33,29 +33,29 @@ const GenericTemplate = ({
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: BACKGROUND_COLOR,
-  },
-  content: {
-    flex: 1,
-  },
+	container: {
+		flex: 1,
+		backgroundColor: BACKGROUND_COLOR,
+	},
+	content: {
+		flex: 1,
+	},
 });
 
 GenericTemplate.propTypes = {
-  children: PropTypes.any.isRequired,
-  isScrollable: PropTypes.bool.isRequired,
-  status: PropTypes.oneOf(Object.values(Status)),
-  errorMessage: PropTypes.string,
-  footer: PropTypes.element,
-  style: PropTypes.object,
+	children: PropTypes.any.isRequired,
+	isScrollable: PropTypes.bool.isRequired,
+	status: PropTypes.oneOf(Object.values(Status)),
+	errorMessage: PropTypes.string,
+	footer: PropTypes.element,
+	style: PropTypes.object,
 };
 
 GenericTemplate.defaultProps = {
-  status: Status.SUCCESS,
-  errorMessage: '',
-  style: {},
-  footer: <></>
+	status: Status.SUCCESS,
+	errorMessage: '',
+	footer: <></>,
+	style: {},
 };
 
 export default GenericTemplate;
