@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { LoadingView, MessageView } from '../..';
+import { LoadingView, MessageView, messageTypes } from '../..';
 import Status from '../../../services/api/Status';
-import { BACKGROUND_COLOR } from '../../../constants';
+import { withTheme } from '../../../config';
 
 const GenericTemplate = ({
     children,
@@ -12,10 +12,11 @@ const GenericTemplate = ({
     status,
     errorMessage,
     style,
+    theme,
 }) => {
     const ViewGroup = isScrollable ? ScrollView : View;
     if (status === Status.ERROR) {
-        return <MessageView message={errorMessage} />;
+        return <MessageView mode={messageTypes.ERROR} message={errorMessage} />;
     }
 
     if (status === Status.DEFAULT || status === Status.LOADING) {
@@ -23,7 +24,7 @@ const GenericTemplate = ({
     }
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container(theme)}>
             <ViewGroup style={[styles.content, style]}>
                 {children}
             </ViewGroup>
@@ -32,15 +33,15 @@ const GenericTemplate = ({
     );
 };
 
-const styles = StyleSheet.create({
-	container: {
+const styles = {
+	container: theme => ({
 		flex: 1,
-		backgroundColor: BACKGROUND_COLOR,
-	},
+		backgroundColor: theme.colors.background,
+	}),
 	content: {
 		flex: 1,
 	},
-});
+};
 
 GenericTemplate.propTypes = {
 	children: PropTypes.any.isRequired,
@@ -58,4 +59,4 @@ GenericTemplate.defaultProps = {
 	style: {},
 };
 
-export default GenericTemplate;
+export default withTheme(GenericTemplate);

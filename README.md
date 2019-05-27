@@ -60,7 +60,7 @@ PRs are very appreciated. For bugs/features consider creating an issue before se
 
 - [ ] IMPLEMENT: Storybook for components (need help)
 - [ ] IMPLEMENT: Write jest tests (need help)
-- [ ] IMPLEMENT: Way to implement theming for component using Context API (need help)
+- [x] IMPLEMENT: Way to implement theming for component using Context API
 - [ ] IMPROVE: Write good documentaion (need help)
 - [ ] IMPLEMENT: Branch that contains only react native and redux, no redux-saga
 - [ ] TODO: Create an ArcN logo

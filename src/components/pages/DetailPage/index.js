@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { GenericTemplate, Text } from '../..';
-import { DETAIL_PAGE_TITLE } from '../../../constants';
+import { DETAIL_PAGE_TITLE } from '../../../config';
 
 const DetailPage = ({ navigation }) => {
     return (

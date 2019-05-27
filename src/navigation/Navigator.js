@@ -7,17 +7,17 @@ import {
     NAVIGATION_HOME_PAGE,
     NAVIGATION_DETAIL_PAGE,
 } from './routes';
-import { PRIMARY_COLOR, ACCENT_COLOR } from '../constants';
+import { theme } from '../config';
 
 export const defaultHeader = {
     headerStyle: {
-        backgroundColor: PRIMARY_COLOR,
+        backgroundColor: theme.colors.primary,
     },
     headerTitleStyle: {
-        color: ACCENT_COLOR,
+        color: theme.colors.secondary, // should be onPrimary
     },
     headerBackTitle: null,
-    headerTintColor: ACCENT_COLOR,
+    headerTintColor: theme.colors.secondary,
 };
 
 const Navigator = createStackNavigator(

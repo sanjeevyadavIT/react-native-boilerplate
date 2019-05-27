@@ -2,66 +2,65 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { Text } from '../..';
-import {
-    DEFAULT_PADDING,
-    DEFAULT_TEXT_COLOR,
-    SUCCESS_TEXT_COLOR,
-    ERROR_TEXT_COLOR,
-    ERROR_TEXT_SIZE,
-} from '../../../constants';
+import { withTheme } from '../../../config';
 
-const DEFAULT_MODE = 'INFO_MODE';
-const SUCCESS_MODE = 'SUCCESS_MODE';
-const ERROR_MODE = 'ERROR_MODE';
+const INFO = 'info';
+const SUCCESS = 'success';
+const ERROR = 'error';
 
-const MessageMode = { DEFAULT_MODE, SUCCESS_MODE, ERROR_MODE };
+const messageTypes = { INFO, SUCCESS, ERROR };
 
-const MessageView = React.memo(({ message, mode }) => {
+const MessageView = React.memo(({ message, mode, theme }) => {
   let textStyle = {};
   switch (mode) {
-    case MessageMode.SUCCESS_MODE:
+    case messageTypes.SUCESS:
       textStyle = styles.success;
       break;
-    case MessageMode.ERROR_MODE:
+    case messageTypes.ERROR:
       textStyle = styles.error;
       break;
     default:
   }
   return (
     <View style={styles.container}>
-      <Text style={[styles.textDefault, textStyle]}>{message}</Text>
+      <Text style={[styles.text(mode, theme), textStyle]}>{message}</Text>
     </View>
   );
 });
 
+const getTextColor = (mode, theme) => {
+	switch(mode) {
+		case success:
+			return theme.colors.success;
+		case error:
+			return theme.colors.error;
+		default:
+			return theme.colors.black;
+	}
+};
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  textDefault: {
-    textAlign: 'center',
-    padding: DEFAULT_PADDING,
-    fontSize: ERROR_TEXT_SIZE,
-    color: DEFAULT_TEXT_COLOR,
-  },
-  success: {
-    color: SUCCESS_TEXT_COLOR,
-  },
-  error: {
-    color: ERROR_TEXT_COLOR,
-  },
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	textDefault: (mode, theme) => ({
+		textAlign: 'center',
+		padding: 8,
+		fontSize: 16,
+		color: getTextColor(mode, theme),
+	}),
 });
 
 MessageView.propTypes = {
-  message: PropTypes.string.isRequired,
-  mode: PropTypes.oneOf(Object.values(MessageMode)),
+	message: PropTypes.string.isRequired,
+	mode: PropTypes.oneOf(Object.values(messageTypes)),
 };
 
 MessageView.defaultProps = {
-  mode: MessageMode.DEFAULT_MODE,
+  	mode: messageTypes.INFO,
 };
 
-export default MessageView;
-export { MessageMode };
+export default withTheme(MessageView);
+export { messageTypes };

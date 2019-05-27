@@ -2,32 +2,29 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { Spinner } from '../..';
-import { ACCENT_COLOR, TRANSPARENT_COLOR } from '../../../constants';
+import { withTheme } from '../../../config';
 
-const LoadingView = ({ size, color, backgroundColor }) => (
-  <View style={[styles.container, { backgroundColor }]}>
-    <Spinner size={size} color={color} />
+const LoadingView = ({ size, theme }) => (
+  <View style={styles.container(theme)}>
+    <Spinner size={size} />
   </View>
 );
 
-const styles = StyleSheet.create({
-  container: {
+const styles = {
+  container: theme => ({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  }
-});
+    backgroundColor: theme.colors.transparent,
+  })
+};
 
 LoadingView.propTypes = {
   size: PropTypes.string,
-  color: PropTypes.string,
-  backgroundColor: PropTypes.string,
 };
 
 LoadingView.defaultProps = {
   size: 'large',
-  color: ACCENT_COLOR,
-  backgroundColor: TRANSPARENT_COLOR,
 };
 
-export default LoadingView;
+export default withTheme(LoadingView);

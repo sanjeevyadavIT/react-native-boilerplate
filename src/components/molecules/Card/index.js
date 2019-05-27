@@ -1,61 +1,46 @@
 import React from 'react';
 import { TouchableNativeFeedback, TouchableOpacity, View, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { BORDER_COLOR } from '../../../constants';
+import { withTheme } from '../../../config';
 
-const DEFAULT_MODE = 'NO_STYLE';
-const OUTLINE_MODE = 'WITH_BORDER';
-
-const CardMode = Object.freeze({ DEFAULT_MODE, OUTLINE_MODE });
 const TouchReceptor = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
+// TODO: TouchReceptor can be extracted into it's own component
 const Card = ({
-    style,
-    mode,
+	style,
     onPress,
     children,
+    theme,
 }) => {
     const ViewGroup = onPress ? TouchReceptor : View;
-    let cardStyle = styles.default;
-
-    switch (mode) {
-		case OUTLINE_MODE:
-			cardStyle = styles.outline;
-			break;
-		default:
-    }
 
     return (
     <ViewGroup onPress={onPress}>
-        <View style={[cardStyle, style]}>
+        <View style={StyleSheet.flatten([styles.conatiner(theme), style])}>
             {children}
         </View>
     </ViewGroup>
     );
 };
 
-const styles = StyleSheet.create({
-  default: {
-    flex: 1
-  },
-  outline: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: BORDER_COLOR,
-  },
-});
+const styles = {
+  conatiner: theme => ({
+	flex: 1,
+	borderWidth: 1,
+	borderColor: theme.colors.grey5,
+	borderRadius: 2, // use from theme
+	padding: 16, // use from theme
+  }),
+};
 
 Card.propTypes = {
   style: PropTypes.object,
   onPress: PropTypes.func,
-  mode: PropTypes.oneOf(Object.values(CardMode)),
 };
 
 Card.defaultProps = {
   style: {},
   onPress: null,
-  mode: CardMode.DEFAULT_MODE,
 };
 
-export default Card;
-export { CardMode };
+export default withTheme(Card);
