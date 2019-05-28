@@ -58,7 +58,7 @@ PRs are very appreciated. For bugs/features consider creating an issue before se
 
 ## Roadmap
 
-- [ ] IMPLEMENT: Storybook for components (need help)
+- [x] IMPLEMENT: Storybook for components
 - [ ] IMPLEMENT: Write jest tests (need help)
 - [x] IMPLEMENT: Way to implement theming for component using Context API
 - [ ] IMPROVE: Write good documentaion (need help)

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Card, Text, Button, buttonTypes } from '../..';
+import { Card, Text } from '../..';
 import { withTheme } from '../../../config';
 import NavigationService from '../../../navigation/NavigationService';
 import { NAVIGATION_DETAIL_PAGE } from '../../../navigation/routes';
@@ -30,11 +30,6 @@ const RepositoryListItem = ({
                 <Icon name="eye" size={20} color="#c0c0c0" />
                 <Text> {item.watchers_count}</Text>
             </View>
-        </View>
-        <View style={[styles.row, { paddingTop: 8 }]}>
-            <Button type={buttonTypes.SOLID} title="Sample button 1"/>
-            <View style={{ margin: 8}} />
-            <Button type={buttonTypes.OUTLINE} title="Sample button 2"/>
         </View>
     </Card>
 );

@@ -11,28 +11,18 @@ const ERROR = 'error';
 const messageTypes = { INFO, SUCCESS, ERROR };
 
 const MessageView = React.memo(({ message, mode, theme }) => {
-  let textStyle = {};
-  switch (mode) {
-    case messageTypes.SUCESS:
-      textStyle = styles.success;
-      break;
-    case messageTypes.ERROR:
-      textStyle = styles.error;
-      break;
-    default:
-  }
   return (
     <View style={styles.container}>
-      <Text style={[styles.text(mode, theme), textStyle]}>{message}</Text>
+      <Text style={[styles.text(mode, theme)]}>{message}</Text>
     </View>
   );
 });
 
 const getTextColor = (mode, theme) => {
 	switch(mode) {
-		case success:
+		case SUCCESS:
 			return theme.colors.success;
-		case error:
+		case ERROR:
 			return theme.colors.error;
 		default:
 			return theme.colors.bodyText;
@@ -45,7 +35,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	textDefault: (mode, theme) => ({
+	text: (mode, theme) => ({
 		...theme.typography.bodyText,
 		textAlign: 'center',
 		padding: theme.padding.eight,
