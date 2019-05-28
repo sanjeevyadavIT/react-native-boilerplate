@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from './';
+import ThemeContext from './ThemeContext';
 
 const ThemeProvider = ({ theme, children }) => (
     <ThemeContext.Provider value={theme}>

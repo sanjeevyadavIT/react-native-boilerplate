@@ -1,16 +1,13 @@
-import ThemeContext from './theme-context';
-import ThemeProvider, { ThemeConsumer } from './ThemeProvider';
-import withTheme from './withTheme';
-import theme from './theme';
+import ThemeContext from './theme/ThemeContext';
+import ThemeProvider, { ThemeConsumer } from './theme/ThemeProvider';
+import withTheme from './theme/withTheme';
+import theme from './theme/theme';
 
+export * from './constants/strings';
 export {
     theme,
     withTheme,
     ThemeContext,
     ThemeProvider,
     ThemeConsumer,
-}
-
-export * from './colors';
-export * from './strings';
-export * from './dimensions';
+};

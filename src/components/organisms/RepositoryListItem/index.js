@@ -3,17 +3,19 @@ import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card, Text, Button, buttonTypes } from '../..';
+import { withTheme } from '../../../config';
 import NavigationService from '../../../navigation/NavigationService';
 import { NAVIGATION_DETAIL_PAGE } from '../../../navigation/routes';
 
 const RepositoryListItem = ({
   item,
+  theme,
 }) => (
     <Card
         onPress={() => NavigationService.navigate(NAVIGATION_DETAIL_PAGE, { item })}
         style={styles.container}
     >
-        <Text style={styles.title}>{item.full_name}</Text>
+        <Text style={styles.text(theme)}>{item.full_name}</Text>
         <Text>{item.description}</Text>
         <View style={styles.insightContainer}>
             <View style={styles.row}>
@@ -41,15 +43,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         minHeight: 100,
-        backgroundColor: 'white',
         marginRight: 8,
         marginLeft: 8,
         marginBottom: 8,
     },
-    title: {
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
+    text: theme => ({
+        ...theme.typography.headingTextBold,
+    }),
     insightContainer: {
         flex: 1,
         flexDirection: 'row',
@@ -67,4 +67,4 @@ RepositoryListItem.propTypes = {
 
 RepositoryListItem.defaultProps = {};
 
-export default RepositoryListItem;
+export default withTheme(RepositoryListItem);

@@ -14,10 +14,10 @@ export const defaultHeader = {
         backgroundColor: theme.colors.primary,
     },
     headerTitleStyle: {
-        color: theme.colors.secondary, // should be onPrimary
+        ...theme.typography.titleTextBold,
     },
     headerBackTitle: null,
-    headerTintColor: theme.colors.secondary,
+    headerTintColor: theme.colors.black,
 };
 
 const Navigator = createStackNavigator(

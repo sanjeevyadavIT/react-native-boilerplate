@@ -35,7 +35,7 @@ const getTextColor = (mode, theme) => {
 		case error:
 			return theme.colors.error;
 		default:
-			return theme.colors.black;
+			return theme.colors.bodyText;
 	}
 };
 
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	textDefault: (mode, theme) => ({
+		...theme.typography.bodyText,
 		textAlign: 'center',
-		padding: 8,
-		fontSize: 16,
+		padding: theme.padding.eight,
 		color: getTextColor(mode, theme),
 	}),
 });

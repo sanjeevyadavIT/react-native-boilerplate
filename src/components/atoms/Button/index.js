@@ -26,7 +26,7 @@ const Button = ({
                     styles.button(type, theme),
                 ])}
             >
-                <Text style={[styles.text(type, theme)]}>{title}</Text>
+                <Text style={styles.text(type, theme)}>{title}</Text>
             </View>
         </TouchReceptor>
     )
@@ -34,14 +34,15 @@ const Button = ({
 
 const styles = StyleSheet.create({
     button: (type, theme) => ({
-        padding: 8, // TODO: extract in theme
+        padding: theme.padding.eight,
         alignItems: 'center',
         backgroundColor: type == SOLID ? theme.colors.secondary : theme.colors.transparent,
         borderWidth: type == OUTLINE ? 1 : 0,
         borderColor: theme.colors.secondary,
-        borderRadius: 2, // TODO: extract in theme
+        borderRadius: theme.dimens.borderRadius,
     }),
     text: (type, theme) => ({
+        ...theme.typography.bodyText,
         color: type == SOLID ? theme.colors.white : theme.colors.secondary,
     }),
 });

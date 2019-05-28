@@ -24,23 +24,24 @@ const Card = ({
 };
 
 const styles = {
-  conatiner: theme => ({
-	flex: 1,
-	borderWidth: 1,
-	borderColor: theme.colors.grey5,
-	borderRadius: 2, // use from theme
-	padding: 16, // use from theme
-  }),
+	conatiner: theme => ({
+		flex: 1,
+		borderWidth: 1,
+		borderColor: theme.colors.border,
+		borderRadius: theme.dimens.borderRadius,
+		padding: theme.padding.sixteen,
+		backgroundColor : theme.colors.surface,
+	}),
 };
 
 Card.propTypes = {
-  style: PropTypes.object,
-  onPress: PropTypes.func,
+	style: PropTypes.object,
+	onPress: PropTypes.func,
 };
 
 Card.defaultProps = {
-  style: {},
-  onPress: null,
+	style: {},
+	onPress: null,
 };
 
 export default withTheme(Card);
