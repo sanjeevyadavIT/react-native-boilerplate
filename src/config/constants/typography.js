@@ -94,7 +94,7 @@ export default {
         color: titleTextColor,
         fontSize: 14,
         fontStyle: 'normal',
-        fontWeight: fontWeightBold,
+        fontWeight: fontWeightRegular,
     },
     labelTextBold: {
         fontFamily,
@@ -113,7 +113,7 @@ export default {
         color: captionTextColor,
         fontSize: 12,
         fontStyle: 'normal',
-        fontWeight: fontWeightBold,
+        fontWeight: fontWeightRegular
     },
     captionTextBold: {
         fontFamily,

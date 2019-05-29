@@ -13,7 +13,7 @@ const messageTypes = { INFO, SUCCESS, ERROR };
 const MessageView = React.memo(({ message, mode, theme }) => {
   return (
     <View style={styles.container}>
-      <Text style={[styles.text(mode, theme)]}>{message}</Text>
+      <Text type="body" style={styles.text(mode, theme)}>{message}</Text>
     </View>
   );
 });
@@ -29,6 +29,7 @@ const getTextColor = (mode, theme) => {
 	}
 };
 
+// TODO: Is there any benefit of using StyleSheet when styles are function?
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
@@ -36,7 +37,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	text: (mode, theme) => ({
-		...theme.typography.bodyText,
 		textAlign: 'center',
 		padding: theme.padding.eight,
 		color: getTextColor(mode, theme),
