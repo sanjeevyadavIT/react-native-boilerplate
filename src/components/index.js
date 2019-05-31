@@ -1,5 +1,5 @@
 // Atoms
-import Button, { buttonTypes } from './atoms/Button';
+import Button from './atoms/Button';
 import Spinner from './atoms/Spinner';
 import Text from './atoms/Text';
 // Molecules
@@ -17,7 +17,6 @@ import GenericTemplate from './templates/GenericTemplate';
 
 export {
     Button,
-    buttonTypes, // Not a component
     Spinner,
     Text,
     Card,
