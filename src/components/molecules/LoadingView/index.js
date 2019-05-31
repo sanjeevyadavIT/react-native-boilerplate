@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { Spinner } from '../..';
-import { withTheme } from '../../../config';
+import { withTheme } from '../../../theme';
 
 const LoadingView = ({ size, theme }) => (
   <View style={styles.container(theme)}>

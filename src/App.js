@@ -3,7 +3,7 @@ import { Provider as StoreProvider } from 'react-redux';
 import Navigator from './navigation/Navigator';
 import NavigationService from './navigation/NavigationService';
 import store from './store';
-import { ThemeProvider, theme } from './config';
+import { ThemeProvider, theme } from './theme';
 
 
 const App = () => (

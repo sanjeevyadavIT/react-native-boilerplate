@@ -3,7 +3,6 @@ import { getStorybookUI, configure } from '@storybook/react-native';
 import {name as appName} from '../app.json';
 import { loadStories } from './storyLoader';
 
-import './addons';
 import './rn-addons';
 
 // TODO: Implement require.context to automatically import stories.js files from components folder 

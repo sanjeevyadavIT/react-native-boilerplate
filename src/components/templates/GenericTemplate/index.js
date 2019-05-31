@@ -1,9 +1,9 @@
 import React from 'react';
-import { ScrollView, View, StyleSheet } from 'react-native';
+import { ScrollView, View, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { LoadingView, MessageView, messageTypes } from '../..';
 import Status from '../../../services/api/Status';
-import { withTheme } from '../../../config';
+import { withTheme } from '../../../theme';
 
 const GenericTemplate = ({
     children,
@@ -24,12 +24,16 @@ const GenericTemplate = ({
     }
 
     return (
-        <View style={styles.container(theme)}>
+        <SafeAreaView style={styles.container(theme)}>
+            <StatusBar
+                barStyle="default"
+                backgroundColor={theme.colors.statusBar}
+            />
             <ViewGroup style={[styles.content, style]}>
                 {children}
             </ViewGroup>
             {footer}
-        </View>
+        </SafeAreaView>
     );
 };
 

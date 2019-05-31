@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text as RNText, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { withTheme } from '../../../config';
+import { withTheme } from '../../../theme';
 
 // Possible value for prop "type" for Text
 const HEADING = 'heading';

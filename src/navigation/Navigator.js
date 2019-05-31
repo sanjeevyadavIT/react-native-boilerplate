@@ -7,7 +7,7 @@ import {
     NAVIGATION_HOME_PAGE,
     NAVIGATION_DETAIL_PAGE,
 } from './routes';
-import { theme } from '../config';
+import { theme } from '../theme';
 
 export const defaultHeader = {
     headerStyle: {
@@ -17,7 +17,7 @@ export const defaultHeader = {
         ...theme.typography.titleTextBold,
     },
     headerBackTitle: null,
-    headerTintColor: theme.colors.black,
+    headerTintColor: theme.colors.appbarTint,
 };
 
 const Navigator = createStackNavigator(

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableNativeFeedback, TouchableOpacity, View, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { withTheme } from '../../../config';
+import { withTheme } from '../../../theme';
 
 const TouchReceptor = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 

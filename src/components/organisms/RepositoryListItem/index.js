@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card, Text } from '../..';
-import { withTheme } from '../../../config';
+import { withTheme } from '../../../theme';
 import NavigationService from '../../../navigation/NavigationService';
 import { NAVIGATION_DETAIL_PAGE } from '../../../navigation/routes';
 

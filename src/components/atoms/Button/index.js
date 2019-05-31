@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableNativeFeedback, TouchableOpacity, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import Text from '../Text';
-import { withTheme } from '../../../config';
+import { withTheme } from '../../../theme';
 
 // Possible value for prop "type"
 const SOLID = 'solid';

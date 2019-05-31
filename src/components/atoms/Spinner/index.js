@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
-import { withTheme } from '../../../config';
+import { withTheme } from '../../../theme';
 
 const Spinner = ({ size, theme }) => <ActivityIndicator size={size} color={theme.colors.secondary} />;
 

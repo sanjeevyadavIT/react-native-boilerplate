@@ -5,6 +5,7 @@ const fontWeightRegular = 'normal';
 const fontWeightSemiBold = '600';
 const fontWeightBold = 'bold';
 
+const appbarTitleTextColor = colors.appbarTint;
 const titleTextColor = colors.titleText;
 const bodyTextColor = colors.bodyText;
 const captionTextColor = colors.captionText;
@@ -15,14 +16,14 @@ export default {
      */
     titleText: {
         fontFamily,
-        color: titleTextColor,
+        color: appbarTitleTextColor,
         fontSize: 20,
         fontStyle: 'normal',
         fontWeight: fontWeightRegular,
     },
     titleTextBold: {
         fontFamily,
-        color: titleTextColor,
+        color: appbarTitleTextColor,
         fontSize: 20,
         fontStyle: 'normal',
         fontWeight: fontWeightBold,

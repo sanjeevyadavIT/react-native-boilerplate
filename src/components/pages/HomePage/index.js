@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { HOME_PAGE_TITLE } from '../../../config';
+import { HOME_PAGE_TITLE } from '../../../constants';
 import { getTrendingRepo } from '../../../store/actions';
 import { GenericTemplate } from '../..';
 import { RepositoryListContainer } from '../../../containers';

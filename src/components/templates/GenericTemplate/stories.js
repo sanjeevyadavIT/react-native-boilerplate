@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import GenericTemplate from '../GenericTemplate';
 import Text from '../../atoms/Text';
-import { ThemeProvider, theme } from '../../../config';
+import { ThemeProvider, theme } from '../../../theme';
 import Status from '../../../services/api/Status';
 
 storiesOf('GenericTemplate', module)

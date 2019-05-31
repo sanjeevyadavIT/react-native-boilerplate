@@ -14,33 +14,33 @@ export default {
     /**
      * Use it for card border
      */
-    border: '#d9d9d9',
+    border: '#e0e0e0',
     /**
      * ========================= Primary color : (Brand color) ========================= 
-     * primaryLight: 
+     * statusBar: color of the status bar
      * primary: to be used as a background color for appbar(toolbar)
-     * primaryDark: to be used for status bar color
+     * appbarTint: tint color to be used for appbar title, icons, back button
      */
-    primaryLight: '#fff',
-    primary: '#fff',
-    primaryDark: '#fff',
+    statusBar: '#00796B',
+    primary: '#009688',
+    appbarTint: '#FFFFFF',
     /**
      * ========================= Secondary color =========================
      * secondaryLight: to be used for hover state
      * secondary: to be used as default button, checkbox, radio button and other component color
      * secondaryDark: to be used for active state
      */
-    secondaryLight: '#53c3f8',
-    secondary: '#1CB0F6',
-    secondaryDark: '#0999dd',
+    secondaryLight: '#d4e157',
+    secondary: '#CDDC39',
+    secondaryDark: '#c0ca33',
     /**
-     * To be used for appbar text, heading, subheading, label text
+     * To be used for heading, subheading and label text
      */
-    titleText: '#595959',
+    titleText: '#212121',
     /**
      * To be used for normal text like paragraph
      */
-    bodyText: '#737373',
+    bodyText: '#757575',
     /**
      * To be used for hint text component
      */

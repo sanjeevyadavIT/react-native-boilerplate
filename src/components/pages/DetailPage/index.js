@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
-import { FlatList, View, StyleSheet } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { GenericTemplate, Text } from '../..';
-import { DETAIL_PAGE_TITLE } from '../../../config';
+import { DETAIL_PAGE_TITLE } from '../../../constants';
 
 const DetailPage = ({ navigation }) => {
     return (
