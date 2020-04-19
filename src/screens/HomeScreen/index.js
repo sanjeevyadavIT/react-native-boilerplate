@@ -4,9 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getTrendingRepo } from '../../store/actions';
 import { GenericTemplate } from '../../components';
 import { RepositoryListContainer } from './containers';
-import { translate } from '../../i18n';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const status = useSelector(state => state.home.status);
   const errorMessage = useSelector(state => state.home.errorMessage);
@@ -22,16 +21,12 @@ const HomeScreen = () => {
       status={status}
       errorMessage={errorMessage}
     >
-      <RepositoryListContainer />
+      <RepositoryListContainer navigation={navigation} />
     </GenericTemplate>
   );
 };
 
 const styles = StyleSheet.create({});
-
-HomeScreen.navigationOptions = {
-  title: translate('homeScreen.appbarTitle'),
-}
 
 HomeScreen.propTypes = {};
 

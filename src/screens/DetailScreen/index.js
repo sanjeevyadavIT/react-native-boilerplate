@@ -3,21 +3,18 @@ import { StyleSheet } from 'react-native';
 import { GenericTemplate, Text } from '../../components';
 import { translate } from '../../i18n';
 
-const DetailScreen = ({ navigation }) => {
+const DetailScreen = ({ route, navigation }) => {
+  const { item } = route.params;
     return (
         <GenericTemplate
             isScrollable={false}
         >
-            <Text>{JSON.stringify(navigation.getParam('item', 'null'))}</Text>
+            <Text>{JSON.stringify(item)}</Text>
         </GenericTemplate>
     );
 };
 
 const styles = StyleSheet.create({});
-
-DetailScreen.navigationOptions = ({ navigation }) => ({
-    title: navigation.getParam('item', { name: translate('detailScreen.appbarTitle') }).name,
-})
 
 DetailScreen.propTypes = {};
 

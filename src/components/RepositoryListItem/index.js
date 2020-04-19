@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card, Text } from '..';
 import { ThemeContext } from '../../theme';
-import NavigationService from '../../navigation/NavigationService';
-import { NAVIGATION_DETAIL_SCREEN } from '../../navigation/routes';
+import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation/routes';
 
 const RepositoryListItem = ({
   item,
+  navigation,
 }) => {
   const theme = useContext(ThemeContext);
 
   return (
     <Card
-      onPress={() => NavigationService.navigate(NAVIGATION_DETAIL_SCREEN, { item })}
+      onPress={() => navigation.navigate(NAVIGATION_TO_DETAIL_SCREEN, { item })}
       style={styles.container}
     >
       <Text style={styles.text(theme)}>{item.full_name}</Text>

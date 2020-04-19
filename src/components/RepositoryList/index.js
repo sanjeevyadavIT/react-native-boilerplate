@@ -5,8 +5,9 @@ import { RepositoryListItem } from '../index';
 
 const RepositoryList = ({
   items,
+  navigation,
 }) => {
-    const renderRow = ({ item, index }) => <RepositoryListItem item={item} />;
+    const renderRow = ({ item, index }) => <RepositoryListItem item={item} navigation={navigation} />;
 
     return (
         <FlatList

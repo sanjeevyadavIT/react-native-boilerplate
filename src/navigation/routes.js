@@ -1,2 +1,2 @@
-export const NAVIGATION_HOME_SCREEN = 'HomePage';
-export const NAVIGATION_DETAIL_SCREEN = 'DetailPage';
+export const NAVIGATION_TO_HOME_SCREEN = 'HomeScreen';
+export const NAVIGATION_TO_DETAIL_SCREEN = 'DetailScreen';

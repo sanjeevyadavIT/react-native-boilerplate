@@ -14,9 +14,9 @@ This boilerplate consists of various elements and best practices I learned while
 
 While this mostly consists of how I organize my projects but can be easily extended to suit any workflow :smile:
 
-If you're new to React Native feel free to checkout this repo I made where I keep all the learning resources I find: [Learn React Native](https://github.com/karanpratapsingh/guides-and-articles/blob/master/Guides/Learn%20React%20Native.md)
+If you're new to React Native feel free to checkout this repo, [Karan Pratap Singh](https://github.com/karanpratapsingh/) made where he keep all the learning resources he find: [Learn React Native](https://github.com/karanpratapsingh/guides-and-articles/blob/master/Guides/Learn%20React%20Native.md)
 
-If you face any issue then please checkout the Known Issues section below, but if the issue persists then feel free to open a issue so we can solve it together :smiley:
+If you face any issue then feel free to open a issue so we can solve it together :smiley:
 
 **Feel free to leave a :star: as motivation if this was useful to you :smile:**
 
@@ -43,7 +43,7 @@ If you face any issue then please checkout the Known Issues section below, but i
     - Storybook Setup
     - Packages:
         - Redux (with redux-saga)
-        - React Navigation
+        - React Navigation (version 5)
         - React Native Vector Icons
 
 ## 🔍 <a name="ProjectStructure"></a> Project Structure:
@@ -146,7 +146,7 @@ The boilerplate will follow latest React Native releases as soon as libraries an
 - [x] IMPLEMENT: Way to implement theming for component using Context API
 - [ ] IMPROVE: Write good documentaion (need help)
 - [ ] IMPLEMENT: Branch that contains only react native and redux, no redux-saga
-- [ ] UPGRADE: react-navigation to version 5
+- [x] UPGRADE: react-navigation to version 5
 - [x] IMPLEMENT: Language localisation
 
 ## 🗃️ Similar project
