@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { GenericTemplate, Text } from '../../components';
-import { DETAIL_PAGE_TITLE } from '../../constants';
+import { translate } from '../../i18n';
 
 const DetailScreen = ({ navigation }) => {
     return (
@@ -16,7 +16,7 @@ const DetailScreen = ({ navigation }) => {
 const styles = StyleSheet.create({});
 
 DetailScreen.navigationOptions = ({ navigation }) => ({
-    title: navigation.getParam('item', { name: DETAIL_PAGE_TITLE }).name,
+    title: navigation.getParam('item', { name: translate('detailScreen.appbarTitle') }).name,
 })
 
 DetailScreen.propTypes = {};

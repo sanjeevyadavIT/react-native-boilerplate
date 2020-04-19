@@ -147,7 +147,7 @@ The boilerplate will follow latest React Native releases as soon as libraries an
 - [ ] IMPROVE: Write good documentaion (need help)
 - [ ] IMPLEMENT: Branch that contains only react native and redux, no redux-saga
 - [ ] UPGRADE: react-navigation to version 5
-- [ ] IMPLEMENT: Language localisation
+- [x] IMPLEMENT: Language localisation
 
 ## 🗃️ Similar project
 

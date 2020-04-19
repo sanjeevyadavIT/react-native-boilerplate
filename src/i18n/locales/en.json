@@ -1,0 +1,15 @@
+{
+  "common": {
+    "brandName": "React Native Boilerplate",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "homeScreen": {
+    "appbarTitle": "Home Screen"
+  },
+  "detailScreen": {
+    "appbarTitle": "Detail Screen"
+  }
+}
