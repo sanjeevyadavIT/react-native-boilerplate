@@ -76,7 +76,7 @@ Rename the project with the name and bundle identifier of your choosing
 
 ``` 
 git checkout -b rename
-react-native-rename <new_name> -b <bundle_identifier>
+npx react-native-rename <new_name> -b <bundle_identifier>
 ```
 
 ## 🚀 <a name="RunningProject"></a> Running the project
