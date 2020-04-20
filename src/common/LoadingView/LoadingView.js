@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { Spinner } from '../index';
+import Spinner from '../Spinner/Spinner';
 import { ThemeContext } from '../../theme';
 
 const LoadingView = ({ size }) => {

@@ -142,12 +142,12 @@ The boilerplate will follow latest React Native releases as soon as libraries an
 
 - [x] UPGRADE: reatct-native 0.62.2
 - [x] IMPLEMENT: Storybook for components
-- [ ] IMPLEMENT: Write jest tests (need help)
 - [x] IMPLEMENT: Way to implement theming for component using Context API
-- [ ] IMPROVE: Write good documentaion (need help)
-- [ ] IMPLEMENT: Branch that contains only react native and redux, no redux-saga
 - [x] UPGRADE: react-navigation to version 5
 - [x] IMPLEMENT: Language localisation
+- [ ] IMPLEMENT: Write jest tests (need help)
+- [ ] IMPROVE: Write good documentaion (need help)
+- [ ] IMPLEMENT: Branch that contains only react native and redux, no redux-saga
 
 ## 🗃️ Similar project
 

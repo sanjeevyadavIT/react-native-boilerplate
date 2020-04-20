@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTrendingRepo } from '../../store/actions';
-import { GenericTemplate } from '../../components';
-import { RepositoryListContainer } from './containers';
+import { GenericTemplate } from '../../common';
+import { RepositoryList } from './components';
 
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const HomeScreen = ({ navigation }) => {
       status={status}
       errorMessage={errorMessage}
     >
-      <RepositoryListContainer navigation={navigation} />
+      <RepositoryList navigation={navigation} />
     </GenericTemplate>
   );
 };

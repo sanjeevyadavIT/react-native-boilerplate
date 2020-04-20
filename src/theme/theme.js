@@ -4,8 +4,8 @@ import dimensions from './dimensions';
 import typography from './typography';
 
 export default {
-    colors,
-    spacing,
-    dimensions,
-    typography,
+  colors,
+  spacing,
+  dimensions,
+  typography,
 };

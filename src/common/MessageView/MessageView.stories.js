@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import MessageView, { messageTypes } from '.';
+import MessageView, { messageTypes } from './MessageView';
 import { ThemeProvider, theme } from '../../theme';
 
 storiesOf('MessageView', module)

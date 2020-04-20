@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import Spinner from '.';
+import LoadingView from './LoadingView';
 import { ThemeProvider, theme } from '../../theme';
 
-storiesOf('Spinner', module)
+storiesOf('LoadingView', module)
   .addDecorator(function (getStory) {
     return (<ThemeProvider theme={theme}>{getStory()}</ThemeProvider>)
   })
-  .add('large', () => (
-    <Spinner size="large" />
-  ))
   .add('small', () => (
-    <Spinner size="small" />
+    <LoadingView size="small" />
+  ))
+  .add('large', () => (
+    <LoadingView size="large" />
   ));

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { ScrollView, View, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { LoadingView, MessageView, messageTypes } from '..'
+import LoadingView from '../LoadingView/LoadingView'
+import MessageView, { messageTypes } from '../MessageView/MessageView'
 import Status from '../../services/api/Status';
 import { ThemeContext } from '../../theme';
 

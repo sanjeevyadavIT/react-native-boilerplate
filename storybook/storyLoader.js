@@ -4,23 +4,23 @@
 // https://github.com/elderfo/react-native-storybook-loader.git
 
 function loadStories() {
-	require('../src/components/Button/stories');
-	require('../src/components/Card/stories');
-	require('../src/components/GenericTemplate/stories');
-	require('../src/components/LoadingView/stories');
-	require('../src/components/MessageView/stories');
-	require('../src/components/Spinner/stories');
-	require('../src/components/Text/stories');
+	require('../src/common/Button/Button.stories');
+	require('../src/common/Card/Card.stories');
+	require('../src/common/GenericTemplate/GenericTemplate.stories');
+	require('../src/common/LoadingView/LoadingView.stories');
+	require('../src/common/MessageView/MessageView.stories');
+	require('../src/common/Spinner/Spinner.stories');
+	require('../src/common/Text/Text.stories');
 }
 
 const stories = [
-	'../src/components/Button/stories',
-	'../src/components/Card/stories',
-	'../src/components/GenericTemplate/stories',
-	'../src/components/LoadingView/stories',
-	'../src/components/MessageView/stories',
-	'../src/components/Spinner/stories',
-	'../src/components/Text/stories'
+	'../src/common/Button/Button.stories',
+	'../src/common/Card/Card.stories',
+	'../src/common/GenericTemplate/GenericTemplate.stories',
+	'../src/common/LoadingView/LoadingView.stories',
+	'../src/common/MessageView/MessageView.stories',
+	'../src/common/Spinner/Spinner.stories',
+	'../src/common/Text/Text.stories'
 ];
 
 module.exports = {

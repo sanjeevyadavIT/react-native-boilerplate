@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import Card from '.';
-import { Text } from '..';
+import Card from './Card';
+import Text from '../Text/Text';
 import { ThemeProvider, theme } from '../../theme';
 
 storiesOf('Card', module)

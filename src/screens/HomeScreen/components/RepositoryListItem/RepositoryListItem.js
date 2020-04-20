@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Card, Text } from '..';
-import { ThemeContext } from '../../theme';
-import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation/routes';
+import { Card, Text } from '../../../../common';
+import { ThemeContext } from '../../../../theme';
+import { NAVIGATION_TO_DETAIL_SCREEN } from '../../../../navigation/routes';
 
 const RepositoryListItem = ({
   item,
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
 
 RepositoryListItem.propTypes = {
   item: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 RepositoryListItem.defaultProps = {};

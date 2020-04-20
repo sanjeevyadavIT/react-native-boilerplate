@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, TouchableNativeFeedback, TouchableOpacity, Platform, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import Text from '../Text';
+import Text from '../Text/Text';
 import { ThemeContext } from '../../theme';
 
 // Possible value for prop "type"

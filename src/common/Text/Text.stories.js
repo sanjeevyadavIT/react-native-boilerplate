@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import Text from '.';
+import Text from './Text';
 import { ThemeProvider, theme } from '../../theme';
 
 const styles = {

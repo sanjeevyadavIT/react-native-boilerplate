@@ -1,5 +1,5 @@
-import HomeScreen from './HomeScreen';
-import DetailScreen from './DetailScreen';
+import HomeScreen from './HomeScreen/HomeScreen';
+import DetailScreen from './DetailScreen/DetailScreen';
 
 export {
   HomeScreen,

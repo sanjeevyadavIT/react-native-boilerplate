@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { Text } from '../index';
+import Text from '../Text/Text';
 import { ThemeContext } from '../../theme';
 
 const INFO = 'info';
