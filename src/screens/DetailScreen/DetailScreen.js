@@ -1,16 +1,13 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { GenericTemplate, Text } from '../../common';
+import { ScrollView, StyleSheet } from 'react-native';
+import { Text } from '../../common';
 import { translate } from '../../i18n';
 
 const DetailScreen = ({ route, navigation }) => {
-  const { item } = route.params;
   return (
-    <GenericTemplate
-      isScrollable={false}
-    >
-      <Text>{JSON.stringify(item)}</Text>
-    </GenericTemplate>
+    <ScrollView>
+      <Text bold type="heading">{translate('detailScreen.heading')}</Text>
+    </ScrollView>
   );
 };
 

@@ -1,65 +1,61 @@
 import React, { useContext } from 'react';
-import { View, TouchableNativeFeedback, TouchableOpacity, Platform, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import Text from '../Text/Text';
 import { ThemeContext } from '../../theme';
+import { SPACING, DIMENS, TYPOGRAPHY } from '../../constants';
 
-// Possible value for prop "type"
-const SOLID = 'solid';
-const OUTLINE = 'outline';
-
-const TouchReceptor = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
-
-// TODO: Add text-only style button type
-// TODO: Write comments to explain props
-// TODO: Implement way to incorporate children
-// TODO: Make component to be full width with a prop
-// TODO: Implement disable functionality
-// TODO: Provide a style prop to customized button
 const Button = ({
+  /**
+   * text to be shown in button
+   */
   title,
-  type,
+  /**
+   * Callback to be called, when button is clicked
+   */
   onPress,
-  children,
-  ...props
+  /**
+   * custom style for button
+   */
+  style,
 }) => {
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <TouchReceptor onPress={onPress} {...props}>
-      <View
-        style={StyleSheet.flatten([
-          styles.button(type, theme),
-        ])}
-      >
-        <Text type="body" style={styles.text(type, theme)}>{title}</Text>
+    <TouchableOpacity onPress={onPress}>
+      <View style={[styles.button(theme), style]}>
+        <Text style={styles.title(theme)}>{title}</Text>
       </View>
-    </TouchReceptor>
-  )
-}
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
-  button: (type, theme) => ({
-    padding: theme.spacing.medium,
+  button: theme => ({
+    flexDirection: 'row',
+    padding: SPACING.small,
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: type === SOLID ? theme.colors.secondary : theme.colors.transparent,
-    borderWidth: type === OUTLINE ? 1 : 0,
-    borderColor: theme.colors.secondary,
-    borderRadius: theme.dimensions.borderRadius,
+    backgroundColor: theme.primaryColor,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: theme.primaryDarkColor,
+    borderRadius: DIMENS.common.borderRadius,
   }),
-  text: (type, theme) => ({
-    color: type === SOLID ? theme.colors.white : theme.colors.secondary,
+  title: (theme) => ({
+    ...TYPOGRAPHY.buttonText,
+    color: theme.white,
   }),
 });
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([SOLID, OUTLINE]),
   onPress: PropTypes.func,
-}
+  style: ViewPropTypes.style,
+};
 
 Button.defaultProps = {
-  type: SOLID,
-  onPress: () => { },
+  onPress: () => {},
+  style: {},
 };
 
 export default Button;

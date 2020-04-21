@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { StyleSheet, View } from 'react-native';
+import { useDispatch } from 'react-redux';
 import { getTrendingRepo } from '../../store/actions';
-import { GenericTemplate } from '../../common';
-import { RepositoryList } from './components';
+import { Text, Button } from '../../common';
+import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation/routes';
+import { translate } from '../../i18n';
 
 const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
-  const status = useSelector(state => state.home.status);
-  const errorMessage = useSelector(state => state.home.errorMessage);
 
   useEffect(() => {
     // componentDidMount
@@ -16,13 +15,15 @@ const HomeScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <GenericTemplate
-      isScrollable={false}
-      status={status}
-      errorMessage={errorMessage}
-    >
-      <RepositoryList navigation={navigation} />
-    </GenericTemplate>
+    <View>
+      <Text type="heading">{translate('homeScreen.message')}</Text>
+      <Text type="subheading">{translate('homeScreen.message')}</Text>
+      <Text type="body">{translate('homeScreen.message')}</Text>
+      <Text bold type="heading">{translate('homeScreen.message')}</Text>
+      <Text bold type="subheading">{translate('homeScreen.message')}</Text>
+      <Text bold type="body">{translate('homeScreen.message')}</Text>
+      <Button title="Detail Screen" onPress={() => navigation.navigate(NAVIGATION_TO_DETAIL_SCREEN)} />
+    </View>
   );
 };
 

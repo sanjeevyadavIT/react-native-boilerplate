@@ -6,15 +6,13 @@
 [![StoryBook](.github/icons/storybook.svg)](https://github.com/storybooks/storybook)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/alexakasanjeev/react-native-boilerplate/issues)
 
-This project is a [React Native](https://facebook.github.io/react-native/) boilerplate that  provides **an architecture optimized for building solid cross-platform mobile applications** through separation of concerns between the UI and business logic to help you kickstart your new app
+This project is a [React Native](https://reactnative.dev/) boilerplate that  provides **an architecture optimized for building solid cross-platform mobile applications** through separation of concerns between the UI and business logic to help you kickstart your new app
 
 When starting new apps I found myself repeatedly setting up my project with same packages over and over again so I decided to automate this process
 
 This boilerplate consists of various elements and best practices I learned while going though apps written by various talented developers in the React Native Community :zap:
 
 While this mostly consists of how I organize my projects but can be easily extended to suit any workflow :smile:
-
-If you're new to React Native feel free to checkout this repo, [Karan Pratap Singh](https://github.com/karanpratapsingh/) made where he keep all the learning resources he find: [Learn React Native](https://github.com/karanpratapsingh/guides-and-articles/blob/master/Guides/Learn%20React%20Native.md)
 
 If you face any issue then feel free to open a issue so we can solve it together :smiley:
 
@@ -26,15 +24,15 @@ If you face any issue then feel free to open a issue so we can solve it together
 
    - [Project Structure](#ProjectStructure)
 
-   - [Using the boilerplate](#UsingBoilerplate)
+   - [Getting Started](#getting-started)
 
    - [Rename the project](#RenameProject)
 
-   - [Running the project](#RunningProject)
+   - [Storybook](#stroybook)
 
    - [Documentations](#Documentations)
 
-## 📦 <a name="Content"></a> Content:
+## <a name="Content"></a>📦 Content:
 
     - React Native (0.62.2)
     - Clean Directory Layout
@@ -46,30 +44,53 @@ If you face any issue then feel free to open a issue so we can solve it together
         - React Navigation (version 5)
         - React Native Vector Icons
 
-## 🔍 <a name="ProjectStructure"></a> Project Structure:
+## <a name="ProjectStructure"></a>🔍 Project Structure:
 
 > [WIP]
 
-## 📲 <a name="UsingBoilerplate"></a> Using the boilerplate:
+## <a name="getting-started"></a>🚀 Getting Started:
 
-Clone the repository:
+1. Clone the repository, by tying this command in terminal
 
-```sh
-git clone https://github.com/alexakasanjeev/react-native-boilerplate.git && cd react-native-boilerplate
+    ```sh
+    git clone https://github.com/alexakasanjeev/react-native-boilerplate.git && cd react-native-boilerplate
+    ```
+
+    > **Optional**: Make sure to remove the existing git history and initialize the project with your own 
+
+    ``` bash
+    rm -rf .git/
+    git init
+    git add .
+    git commit -m 'project init'
+    git remote add origin <your remote repo>
+    git push -u origin master
+    ```
+
+2. Install the dependencies 
+
+    ```bash
+    npm install && ( cd ios && pod install )
+    ```
+
+### For Android
+
+Run the following command while the emulator is open or a device is connected via adb.
+
+``` 
+npx react-native run-android
 ```
 
-Make sure to remove the existing git history and initialize the project with your own 
+### For iOS
 
-``` bash
-rm -rf .git/
-git init
-git add .
-git commit -m 'project init'
-git remote add origin <your remote repo>
-git push -u origin master
+Run the following commands to install pods and run the app on iPhone simulator
+
+``` 
+cd ios && pod install && cd ..
+npx react-native run-ios
 ```
 
-## 📝 <a name="RenameProject"></a> Rename the project:
+## <a name="RenameProject"></a>📝 Rename the project:
 
 Rename the project with the name and bundle identifier of your choosing
 **Note**: it is advised to do so in a new branch
@@ -79,75 +100,31 @@ git checkout -b rename
 npx react-native-rename <new_name> -b <bundle_identifier>
 ```
 
-## 🚀 <a name="RunningProject"></a> Running the project
+## <a name="storybook"></a>✨ Run Storybook
 
-Assuming you have cloned the repository : [Using the boilerplate](#UsingBoilerplate)
+To run [Storybook](https://storybook.js.org/) follow these steps
 
-### Install dependencies
+1. Change the value of `SHOW_STORYBOOK` variable in [index.js](index.js) from `false` to `true`
 
-```sh
-npm install
-```
+2. Open a terminal and run storybook server
 
-After dependencies are installed, start the metro bundler
+    ```bash
+    npm run storybook
+    ```
 
-```sh
-npm start
-```
+3. In another terminal run `npm start` or `yarn start` command to view stories
 
-### For Android
 
-Run the following command while the simulator is open or a device is connected via adb.
+## <a name="Documentations"></a>📖 Docs
 
-``` 
-react-native run-android
-```
-
-### For iOS
-
-Run the following commands to install pods and run the app on iPhone simulator
-
-``` 
-npm run cocoapods
-react-native run-ios
-```
-
-## 📜 <a name="Documentations"></a> Documentations
-
-> [WIP]
-
-## 🙋‍ Contributing
-
-#### Code 
-If you are a developer and you wish to contribute to the app please fork the project
-and submit a pull request.
-
-#### Issues
-You can trace the status of known issues [here](https://github.com/alexakasanjeev/react-native-boilerplate/issues),
-also feel free to file a new issue (helpful description, screenshots and logcat are appreciated)
-
-#### Translations
-If you are able to contribute with a new translation of a missing language or if you want to improve an existing one, we greatly appreciate any suggestion!
-
-#### Suggestion/Ideas
-If you have a feature request or idea which will enhance the user experience of app or have better UI design, create an issue with feature-request template.
-
-PRs are very appreciated. For bugs/features consider creating an issue before sending a PR.
+- [Understanding the file structure](documentation/file-structure.md)
+- [Theme Module explanation](documentation/how-to-use-theme.md)
+- [Contributing to this project](documentation/contributing.md)
+- [Roadmap](documentation/roadmap.md)
 
 ## 🔔 Updates
 
 The boilerplate will follow latest React Native releases as soon as libraries and tools used here are compatible. I will personally try update this as I use this boilerplate in production :smile:
-
-## 📋 Roadmap
-
-- [x] UPGRADE: reatct-native 0.62.2
-- [x] IMPLEMENT: Storybook for components
-- [x] IMPLEMENT: Way to implement theming for component using Context API
-- [x] UPGRADE: react-navigation to version 5
-- [x] IMPLEMENT: Language localisation
-- [ ] IMPLEMENT: Write jest tests (need help)
-- [ ] IMPROVE: Write good documentaion (need help)
-- [ ] IMPLEMENT: Branch that contains only react native and redux, no redux-saga
 
 ## 🗃️ Similar project
 
@@ -167,4 +144,4 @@ If this project help you, or to help acclerate development, you can give me a cu
 
 ## 🛡 License
 
-This project is licensed under the GNU v3 Public License License - see the [LICENSE.md](LICENSE.md) file for details
+This project is under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

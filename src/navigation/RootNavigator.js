@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
@@ -12,24 +13,24 @@ import {
 import { ThemeContext } from '../theme';
 import { translate } from '../i18n';
 
-const defaultHeader = theme => ({
-  headerStyle: {
-    backgroundColor: theme.colors.primary,
-  },
-  headerBackTitle: null,
-  headerTintColor: theme.colors.appbarTintColor,
-});
-
 const Stack = createStackNavigator();
 
 const RootNavigator = () => {
-  const theme = useContext(ThemeContext);
-  console.log({ theme })
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <NavigationContainer    >
+    <NavigationContainer>
+      <StatusBar
+        barStyle={theme.appbar.barStyle}
+        backgroundColor={theme.appbar.statusBarColor}
+      />
       <Stack.Navigator
         screenOptions={({ navigation }) => ({
-          ...defaultHeader(theme),
+          headerStyle: {
+            backgroundColor: theme.primaryColor,
+          },
+          headerBackTitle: null,
+          headerTintColor: theme.appbar.tintColor,
         })}
       >
         <Stack.Screen
@@ -43,7 +44,7 @@ const RootNavigator = () => {
           name={NAVIGATION_TO_DETAIL_SCREEN}
           component={DetailScreen}
           options={({ route }) => ({
-            title: route.params.item.name || translate('detailScreen.appbarTitle')
+            title: translate('detailScreen.appbarTitle')
           })}
         />
       </Stack.Navigator>

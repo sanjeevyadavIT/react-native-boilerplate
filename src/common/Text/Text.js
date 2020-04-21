@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { Text as RNText, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import { TYPOGRAPHY } from '../../constants';
 import { ThemeContext } from '../../theme';
 
 // Possible value for prop "type" for Text
+// add other if required
 const HEADING = 'heading';
 const SUB_HEADING = 'subheading';
 const BODY = 'body';
-const LABEL = 'label';
-const CAPTION = 'caption';
 
-// NOTE: Improve comments quality
 const Text = ({
   /**
    * @type prop helps style Text with pre default styling define in
@@ -18,8 +17,6 @@ const Text = ({
    * 1. 'heading'
    * 2. 'subheading'
    * 3. 'body'
-   * 4. 'label'
-   * 5. 'caption'
    *
    * default value: 'body'
    */
@@ -27,22 +24,24 @@ const Text = ({
   /**
    * @bold prop is a boolean, if enabled will use bold version of the
    * type mentioned.
+   *
+   * default value: false
    */
   bold,
   /**
    * @style prop will overwrite the predefined styling for Text defined by
    * @type prop
-   *
-   * default value: false
    */
   style,
+  /**
+   * Other Text props
+   */
   ...props
 }) => {
-  const theme = useContext(ThemeContext);
-
+  const { theme } = useContext(ThemeContext);
   return (
     <RNText
-      style={StyleSheet.flatten([styles.text(type, bold, theme), style])}
+      style={StyleSheet.flatten([getTextStyle(type, bold, theme), style])}
       {...props}
     />
   );
@@ -57,30 +56,19 @@ const getTextStyle = (type, bold, theme) => {
     case SUB_HEADING:
       style = 'subheadingText';
       break;
-    case LABEL:
-      style = 'labelText';
-      break;
-    case CAPTION:
-      style = 'captionText';
-      break;
     default:
       style = 'bodyText';
   }
   if (bold) {
     style += 'Bold';
   }
-  return theme.typography[style];
+  return TYPOGRAPHY[style](theme);
 };
 
-const styles = {
-  text: (type, bold, theme) => ({
-    ...getTextStyle(type, bold, theme),
-  }),
-};
+const styles = StyleSheet.create({});
 
-Text.propStyles = {
-  theme: PropTypes.object.isRequired,
-  type: PropTypes.oneOf([HEADING, SUB_HEADING, BODY, LABEL, CAPTION]),
+Text.propTypes = {
+  type: PropTypes.oneOf([HEADING, SUB_HEADING, BODY]),
   bold: PropTypes.bool,
   style: PropTypes.object,
 };

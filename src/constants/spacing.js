@@ -15,5 +15,5 @@ export default {
   small: baseSpacing * 0.8,
   medium: baseSpacing * 1.2,
   large: baseSpacing * 1.6,
-  extraLarge: baseSpacing * 2.4,
+  extraLarge: baseSpacing * 3.2,
 };
