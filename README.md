@@ -28,7 +28,7 @@ If you face any issue then feel free to open a issue so we can solve it together
 
    - [Rename the project](#RenameProject)
 
-   - [Storybook](#stroybook)
+   - [Storybook](#storybook)
 
    - [Documentations](#Documentations)
 

@@ -197,7 +197,7 @@ App contain several custom values from image height, width to a view border radi
     }
     ```
 
-2. Then import `DIMENS` object defined in [`dimens.js`](src/constants/dimens.js) file from `constants` folder
+2. Then import `DIMENS` object defined in `dimens.js` file from `constants` folder
 
     ```javascript
     import { DIMENS } from '../constants';
