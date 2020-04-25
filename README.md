@@ -2,9 +2,13 @@
 <img style="margin-bottom: 40px; " alt="Project Structure" src=".github/images/banner.png">
 </p>
 
-![React Native](https://img.shields.io/badge/react--native-0.62.2-brightgreen)
+![React Native version](https://img.shields.io/github/package-json/dependency-version/alexakasanjeev/react-native-boilerplate/react-native)
+![React Navigation version](https://img.shields.io/github/package-json/dependency-version/alexakasanjeev/react-native-boilerplate/@react-navigation/native?label=react-navigation)
 [![StoryBook](.github/icons/storybook.svg)](https://github.com/storybooks/storybook)
+![Repo size](https://img.shields.io/github/repo-size/alexakasanjeev/react-native-boilerplate)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/alexakasanjeev/react-native-boilerplate/issues)
+![Last commit](https://img.shields.io/github/last-commit/alexakasanjeev/react-native-boilerplate)
+![License](https://img.shields.io/github/license/alexakasanjeev/react-native-boilerplate)
 
 This project is a [React Native](https://reactnative.dev/) boilerplate that  provides **an architecture optimized for building solid cross-platform mobile applications** through separation of concerns between the UI and business logic to help you kickstart your new app
 
@@ -37,7 +41,7 @@ If you face any issue then feel free to open a issue so we can solve it together
     - React Native (0.62.2)
     - Clean Directory Layout
     - Internationalization (i18n)
-    - Theme Implementation
+    - Theme Implementation (with dark mode)
     - Storybook Setup
     - Packages:
         - Redux (with redux-saga)
