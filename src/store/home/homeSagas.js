@@ -5,7 +5,7 @@ import {
   TRENDING_REPO_LOADING,
   TRENDING_REPO_SUCCESS,
   TRENDING_REPO_ERROR,
-} from './actions';
+} from './homeActions';
 
 // worker saga: Fetch Trending repositories when watcher saga sees the action
 function* fetchTrendingRepo({ payload }) {

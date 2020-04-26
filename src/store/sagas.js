@@ -1,5 +1,5 @@
 import { fork } from 'redux-saga/effects';
-import homeSagas from './home/sagas';
+import homeSagas from './home/homeSagas';
 // import someOtherSagas from './someOther/sagas';
 
 /**

@@ -1,9 +1,9 @@
-import Button from './Button/Button';
-import Spinner from './Spinner/Spinner';
 import Text from './Text/Text';
+import Button from './Button/Button';
+import HeaderButtons from './HeaderButtons/HeaderButtons';
 
 export {
-  Button,
-  Spinner,
   Text,
+  Button,
+  HeaderButtons,
 };

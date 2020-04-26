@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getTrendingRepo } from '../../store/actions';
 import { Text, Button } from '../../common';
-import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation/routes';
+import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation';
 import { translate } from '../../i18n';
 import { ThemeContext, lightTheme, darkTheme } from '../../theme';
 

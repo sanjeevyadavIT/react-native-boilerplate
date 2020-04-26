@@ -2,7 +2,7 @@ import {
   TRENDING_REPO_LOADING,
   TRENDING_REPO_SUCCESS,
   TRENDING_REPO_ERROR,
-} from './actions';
+} from './homeActions';
 import Status from '../../services/api/Status';
 
 const initialState = {

@@ -4,6 +4,7 @@ export default {
    */
   common: {
     borderRadius: 2,
+    appbarIconSize: 23,
   },
   /**
    * Constants related to HomeScreen

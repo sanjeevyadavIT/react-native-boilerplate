@@ -4,7 +4,8 @@
     "ok": "OK",
     "cancel": "Cancel",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "drawerButton": "Drawer Button"
   },
   "homeScreen": {
     "appbarTitle": "Home Screen",
