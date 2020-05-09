@@ -16,6 +16,7 @@
     "@react-navigation/drawer": "^5.5.0",
     "@react-navigation/native": "^5.1.4",
     "@react-navigation/stack": "^5.2.9",
+    "axios": "^0.19.2",
     "i18n-js": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "16.11.0",

@@ -3,7 +3,7 @@ import {
   TRENDING_REPO_SUCCESS,
   TRENDING_REPO_ERROR,
 } from './homeActions';
-import Status from '../../services/api/Status';
+import { Status } from '../../api';
 
 const initialState = {
   status: Status.DEFAULT,

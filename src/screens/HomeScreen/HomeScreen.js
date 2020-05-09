@@ -1,16 +1,48 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { StyleSheet, View, Switch } from 'react-native';
+import { StyleSheet, ScrollView, View, Switch } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getTrendingRepo } from '../../store/actions';
 import { Text, Button } from '../../common';
 import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation';
+import { Status } from '../../api';
 import { translate } from '../../i18n';
 import { ThemeContext, lightTheme, darkTheme } from '../../theme';
 
 const HomeScreen = ({
+  /**
+   * Tells about the status of get trendending repo api call
+   *
+   * if status === Status.DEFAULT => api hasn't been hit yet
+   * if status === Status.LOADING => api is currently being executed
+   * if status === Status.SUCCESS => success response from api
+   * if status === Status.ERROR   => error response from api
+   *
+   * @source: redux
+   */
+  status,
+  /**
+   * Contains the error message from server, when status === Status.ERROR
+   *
+   * @source: redux
+   */
+  errorMessage,
+  /**
+   * Array, which store trendeing repository data
+   *
+   * @source: redux
+   */
+  items,
+  /**
+   * redux action to initiate get trending repo api request
+   *
+   * @source: redux
+   */
+  getTrendingRepo: _getTrendingRepo,
+  /**
+   * @source react-navigation
+   */
   navigation,
-  getTrendingRepo: _getTrendingRepo
 }) => {
   const [isDarkTheme, toggleDarkTheme] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
@@ -27,14 +59,21 @@ const HomeScreen = ({
   }
 
   return (
-    <View style={styles.container(theme)}>
-      <Text>Dark Mode</Text>
-      <Switch
-        onValueChange={toggleSwitch}
-        value={isDarkTheme}
-      />
-      <Button title="Detail Screen" onPress={() => navigation.navigate(NAVIGATION_TO_DETAIL_SCREEN)} />
-    </View>
+    <ScrollView style={styles.container(theme)}>
+      <View>
+        <Text>{translate('homeScreen.darkMode')}</Text>
+        <Switch
+          onValueChange={toggleSwitch}
+          value={isDarkTheme}
+        />
+
+        <Button title={translate('homeScreen.detailButton')} onPress={() => navigation.navigate(NAVIGATION_TO_DETAIL_SCREEN)} />
+
+        <Text>{`${translate('homeScreen.apiCallStatus')} : ${status}`}</Text>
+        {errorMessage !== '' && (<Text>{errorMessage}</Text>)}
+        <Text>{JSON.stringify(items)}</Text>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -48,13 +87,22 @@ const styles = StyleSheet.create({
 HomeScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
   getTrendingRepo: PropTypes.func.isRequired,
+  status: PropTypes.oneOf(Object.values(Status)).isRequired,
+  items: PropTypes.arrayOf(PropTypes.object),
+  errorMessage: PropTypes.string,
 };
 
-HomeScreen.defaultProps = {};
+HomeScreen.defaultProps = {
+  items: [],
+  errorMessage: '',
+};
 
-const mapStateToProps = ({ }) => {
+const mapStateToProps = ({ home }) => {
+  const { status, errorMessage, items } = home;
   return {
-
+    items,
+    status,
+    errorMessage,
   };
 }
 

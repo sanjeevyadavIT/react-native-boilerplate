@@ -1,5 +1,5 @@
 import { takeLatest, takeEvery, call, put } from 'redux-saga/effects';
-import { api } from '../../services/api';
+import { api } from '../../api';
 import {
   TRENDING_REPO_REQUEST,
   TRENDING_REPO_LOADING,
@@ -8,14 +8,14 @@ import {
 } from './homeActions';
 
 // worker saga: Fetch Trending repositories when watcher saga sees the action
-function* fetchTrendingRepo({ payload }) {
+function* fetchTrendingRepo({ payload: { date } }) {
   try {
     yield put({ type: TRENDING_REPO_LOADING });
-    const response = yield call({ context: api, fn: api.github.getTrendingRepo }, payload.date);
+    const response = yield call({ context: api, fn: api.getTrendingRepo }, date);
     yield put({ type: TRENDING_REPO_SUCCESS, payload: { items: response.items } });
   }
   catch (error) {
-    yield put({ TRENDING_REPO_ERROR, payload: { error } });
+    yield put({ type: TRENDING_REPO_ERROR, payload: { errorMessage: error.message } });
   }
 }
 
