@@ -1,4 +1,4 @@
-export default {
+export default Object.freeze({
   /**
    * Constants related to App
    */
@@ -11,7 +11,7 @@ export default {
    */
   homeScreen: {},
   /**
-   * Constants related to DetailScreen
+   * Constants related to SettingsScreen
    */
-  detailScreen: {},
-};
+  settingsScreen: {},
+});

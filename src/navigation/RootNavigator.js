@@ -6,11 +6,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { HeaderButtons } from '../common';
 import {
   HomeScreen,
-  DetailScreen,
+  SettingsScreen,
 } from '../screens';
 import {
   NAVIGATION_TO_HOME_SCREEN,
-  NAVIGATION_TO_DETAIL_SCREEN,
+  NAVIGATION_TO_SETTINGS_SCREEN,
 } from './routes';
 import { ThemeContext } from '../theme';
 import { translate } from '../i18n';
@@ -47,10 +47,10 @@ const StackNavigator = () => {
         })}
       />
       <Stack.Screen
-        name={NAVIGATION_TO_DETAIL_SCREEN}
-        component={DetailScreen}
+        name={NAVIGATION_TO_SETTINGS_SCREEN}
+        component={SettingsScreen}
         options={({ route }) => ({
-          title: translate('detailScreen.appbarTitle')
+          title: translate('settingsScreen.appbarTitle')
         })}
       />
     </Stack.Navigator>

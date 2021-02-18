@@ -10,12 +10,11 @@
   "homeScreen": {
     "appbarTitle": "Home Screen",
     "message": "React Native Boilerplate",
-    "darkMode": "Dark Mode",
-    "detailButton": "Detail Screen",
+    "settingsButton": "Open Settings Screen",
     "apiCallStatus": "Api call status"
   },
-  "detailScreen": {
-    "appbarTitle": "Detail Screen",
-    "heading": "This is detail Screen"
+  "settingsScreen": {
+    "appbarTitle": "Settings",
+    "darkMode": "Dark Mode"
   }
 }

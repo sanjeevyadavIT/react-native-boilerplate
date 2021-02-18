@@ -1,14 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { StyleSheet, ScrollView, View, Switch } from 'react-native';
-import { connect } from 'react-redux';
+import React, {useContext, useEffect} from 'react';
+import {StyleSheet, ScrollView, View} from 'react-native';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { getTrendingRepo } from '../../store/actions';
-import { Text, Button } from '../../common';
-import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation';
-import { Status } from '../../api';
-import { translate } from '../../i18n';
-import { loadTheme, saveTheme } from '../../utils';
-import { ThemeContext, lightTheme, darkTheme } from '../../theme';
+import {getTrendingRepo} from '../../store/actions';
+import {Text, Button} from '../../common';
+import {NAVIGATION_TO_SETTINGS_SCREEN} from '../../navigation';
+import {Status} from '../../api';
+import {translate} from '../../i18n';
+import {loadTheme} from '../../utils';
+import {ThemeContext, lightTheme, darkTheme} from '../../theme';
 
 const HomeScreen = ({
   /**
@@ -45,59 +45,43 @@ const HomeScreen = ({
    */
   navigation,
 }) => {
-  const [isDarkTheme, toggleDarkTheme] = useState(false);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const {theme, setTheme} = useContext(ThemeContext);
 
   useEffect(() => {
     // componentDidMount
     _getTrendingRepo();
     loadTheme()
-      .then(themeType => {
-        if(themeType) {
-          setTheme(themeType === 'dark'? darkTheme : lightTheme);
+      .then((themeType) => {
+        if (themeType) {
+          setTheme(themeType === 'dark' ? darkTheme : lightTheme);
           toggleDarkTheme(themeType === 'dark');
         }
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }, []);
 
-  const toggleSwitch = state => {
-    // If switch is on, set dark theme, else light
-    toggleDarkTheme(state);
-    setTheme(state ? darkTheme : lightTheme);
-    saveTheme(state? 'dark' : 'light');
-  }
-
   return (
-    <ScrollView style={styles.container(theme)}>
-      <View>
-        <View style={styles.switchContainer}>
-        <Text>{translate('homeScreen.darkMode')}</Text>
-        <Switch
-          onValueChange={toggleSwitch}
-          value={isDarkTheme}
-        />
+    <>
+      <ScrollView style={styles.container(theme)}>
+        <View>
+          <Text>{`${translate('homeScreen.apiCallStatus')} : ${status}`}</Text>
+          {errorMessage !== '' && <Text>{errorMessage}</Text>}
+          <Text>{JSON.stringify(items, null, 2)}</Text>
         </View>
-
-        <Button title={translate('homeScreen.detailButton')} onPress={() => navigation.navigate(NAVIGATION_TO_DETAIL_SCREEN)} />
-
-        <Text>{`${translate('homeScreen.apiCallStatus')} : ${status}`}</Text>
-        {errorMessage !== '' && (<Text>{errorMessage}</Text>)}
-        <Text>{JSON.stringify(items)}</Text>
-      </View>
-    </ScrollView>
+      </ScrollView>
+      <Button
+        title={translate('homeScreen.settingsButton')}
+        onPress={() => navigation.navigate(NAVIGATION_TO_SETTINGS_SCREEN)}
+      />
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  container: theme => ({
+  container: (theme) => ({
     flex: 1,
     backgroundColor: theme.backgroundColor,
   }),
-  switchContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
 });
 
 HomeScreen.propTypes = {
@@ -113,13 +97,13 @@ HomeScreen.defaultProps = {
   errorMessage: '',
 };
 
-const mapStateToProps = ({ home }) => {
-  const { status, errorMessage, items } = home;
+const mapStateToProps = ({home}) => {
+  const {status, errorMessage, items} = home;
   return {
     items,
     status,
     errorMessage,
   };
-}
+};
 
-export default connect(mapStateToProps, { getTrendingRepo })(HomeScreen);
+export default connect(mapStateToProps, {getTrendingRepo})(HomeScreen);

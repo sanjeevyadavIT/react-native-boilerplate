@@ -8,10 +8,12 @@
   },
   "homeScreen": {
     "appbarTitle": "Home Screen",
-    "message": "React Native Boilerplate"
+    "message": "React Native Boilerplate",
+    "settingsButton": "Open Settings Screen",
+    "apiCallStatus": "Api call status"
   },
-  "detailScreen": {
-    "appbarTitle": "Detail Screen",
-    "heading": "This is detail Screen"
+  "settingsScreen": {
+    "appbarTitle": "Settings",
+    "darkMode": "Dark Mode",
   }
 }

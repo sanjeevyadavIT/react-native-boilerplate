@@ -1,7 +1,7 @@
 import HomeScreen from './HomeScreen/HomeScreen';
-import DetailScreen from './DetailScreen/DetailScreen';
+import SettingsScreen from './SettingsScreen/SettingsScreen';
 
 export {
   HomeScreen,
-  DetailScreen
+  SettingsScreen,
 };
