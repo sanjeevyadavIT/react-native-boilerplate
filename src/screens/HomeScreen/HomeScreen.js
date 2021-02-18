@@ -7,6 +7,7 @@ import { Text, Button } from '../../common';
 import { NAVIGATION_TO_DETAIL_SCREEN } from '../../navigation';
 import { Status } from '../../api';
 import { translate } from '../../i18n';
+import { loadTheme, saveTheme } from '../../utils';
 import { ThemeContext, lightTheme, darkTheme } from '../../theme';
 
 const HomeScreen = ({
@@ -50,22 +51,33 @@ const HomeScreen = ({
   useEffect(() => {
     // componentDidMount
     _getTrendingRepo();
+    loadTheme()
+      .then(themeType => {
+        if(themeType) {
+          setTheme(themeType === 'dark'? darkTheme : lightTheme);
+          toggleDarkTheme(themeType === 'dark');
+        }
+      })
+      .catch(error => console.log(error));
   }, []);
 
   const toggleSwitch = state => {
     // If switch is on, set dark theme, else light
     toggleDarkTheme(state);
     setTheme(state ? darkTheme : lightTheme);
+    saveTheme(state? 'dark' : 'light');
   }
 
   return (
     <ScrollView style={styles.container(theme)}>
       <View>
+        <View style={styles.switchContainer}>
         <Text>{translate('homeScreen.darkMode')}</Text>
         <Switch
           onValueChange={toggleSwitch}
           value={isDarkTheme}
         />
+        </View>
 
         <Button title={translate('homeScreen.detailButton')} onPress={() => navigation.navigate(NAVIGATION_TO_DETAIL_SCREEN)} />
 
@@ -82,6 +94,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.backgroundColor,
   }),
+  switchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
 });
 
 HomeScreen.propTypes = {
